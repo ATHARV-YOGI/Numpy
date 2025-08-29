@@ -1,0 +1,173 @@
+Quick Revision Notes – NumPy
+
+1. Basics
+
+NumPy = Numerical Python → library for numerical computations.
+
+Works with n-dimensional arrays (ndarray), faster than Python lists.
+
+Uses vectorization (no loops, element-wise operations).
+
+
+import numpy as np
+
+
+---
+
+2. Array Creation
+
+From list/tuple → np.array([1,2,3])
+
+Zeros/Ones → np.zeros((2,3)), np.ones((3,3))
+
+Full/Empty → np.full((2,2), 5), np.empty((2,2))
+
+Range → np.arange(0,10,2)
+
+Linspace → np.linspace(0,1,5) → evenly spaced numbers
+
+Identity Matrix → np.eye(3)
+
+Random → np.random.rand(3,3), np.random.randint(1,10,(2,2))
+
+
+
+---
+
+3. Array Attributes
+
+arr.shape → dimensions
+
+arr.ndim → number of dimensions
+
+arr.size → total elements
+
+arr.dtype → data type
+
+arr.itemsize → size of one element
+
+
+
+---
+
+4. Indexing & Slicing
+
+arr = np.array([10,20,30,40])
+arr[0]   # 10
+arr[-1]  # 40
+arr[1:3] # [20,30]
+arr[:2]  # [10,20]
+arr[::-1] # reverse
+
+2D Indexing → arr[1,2] (row 1, col 2)
+
+Slicing rows/cols → arr[:,1], arr[0,:]
+
+
+
+---
+
+5. Operations
+
+Element-wise: + , - , * , / , **
+
+Aggregate Functions:
+
+arr.sum(), arr.min(), arr.max()
+
+arr.mean(), np.median(arr), np.std(arr)
+
+arr.argmin(), arr.argmax() (index of min/max)
+
+
+Matrix Operations:
+
+np.dot(A,B) or A @ B
+
+np.transpose(A) or A.T
+
+np.linalg.inv(A) (inverse)
+
+np.linalg.det(A) (determinant)
+
+np.linalg.eig(A) (eigenvalues & vectors)
+
+
+
+
+---
+
+6. Reshaping & Combining
+
+Reshape → arr.reshape(2,3)
+
+Flatten → arr.ravel() or arr.flatten()
+
+Stacking:
+
+np.vstack((a,b)) (vertical)
+
+np.hstack((a,b)) (horizontal)
+
+np.concatenate((a,b), axis=0)
+
+
+
+
+---
+
+7. Boolean Indexing & Filtering
+
+arr = np.array([10,20,30,40])
+arr[arr > 20]   # [30, 40]
+np.where(arr>20, 1, 0)  # condition replacement
+
+
+---
+
+8. Broadcasting
+
+NumPy automatically expands smaller arrays in arithmetic.
+
+
+arr = np.array([1,2,3])
+arr + 5   # [6,7,8]
+
+
+---
+
+9. Random Module
+
+np.random.rand(n) → uniform [0,1)
+
+np.random.randn(n) → standard normal
+
+np.random.randint(low,high,size) → random integers
+
+np.random.choice(arr) → random choice
+
+np.random.shuffle(arr) → shuffle in-place
+
+
+
+---
+
+10. Useful Tricks
+
+np.unique(arr) → unique values
+
+np.sort(arr) → sort array
+
+np.argsort(arr) → indices of sorted order
+
+np.clip(arr,a,b) → limit values to [a,b]
+
+np.any(arr>10) → True if any element > 10
+
+np.all(arr>0) → True if all elements > 0
+
+
+
+---
+
+
